@@ -14,7 +14,9 @@ const App = () => {
 	const [inputText, setInputText] = useState("");
 	const [definition, setDefinition] = useState("");
 	const findDefinition = () => {
-		const foundWord = data.find((ele) => ele.word === inputText);
+		const foundWord = data.find(
+			(ele) => ele.word.toLowerCase() === inputText.toLowerCase()
+		);
 		console.log(foundWord);
 		foundWord
 			? setDefinition(foundWord.meaning)
